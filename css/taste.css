@@ -1,0 +1,362 @@
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* 전체 선택자 */
+*{margin:0; padding: 0; box-sizing: border-box;}
+li {list-style:none;}
+a {text-decoration: none; color: #111; display: block;}
+img {width: 100%;}
+h1, h2, h3, h4, h5, h6 {font-family: 'S-CoreDream-3Light';}
+h1 {font-size: 46px;}
+/* 클래스 선택자 */
+.wrap { width: 100%; }
+
+header { width: 100%; height: 100px; padding-top: 32px;}
+
+.centerBox { width: 1400px; margin: 0 auto;
+                /* 자식객체 가로로 나열 */
+display: flex; flex-flow: row nowrap; justify-content: space-between;}
+
+header .centerBox .logo {width: 240px;}
+
+header .centerBox nav {width: 780px;}
+
+header .centerBox nav > ul {display: flex; flex-flow: row nowrap; justify-content: space-between;}
+header .centerBox nav > ul > li {position: relative;}
+header .centerBox nav > ul > li > a {text-align: center; font-size: 20px; font-weight: bold;
+                /* 글씨 자리가 좁아서 아래로 내려가는 현상 방지 */
+                                     white-space: nowrap;
+                /* 주 메뉴와 서브메뉴의 간격 조절 */
+                                     padding-bottom: 40px;
+}
+/* 주메뉴에 마우스 오버했을 때 글자색 변경 */
+/* li에 :hover를 붙이면 서브메뉴로 마우스를 내려도 주메뉴의 바뀐 색이 유지됨 */
+header .centerBox nav > ul > li:hover > a {color:#d5608b;}
+
+/* 부모객체(li)를 기준으로 .sub를 가운데 정렬 */
+header .centerBox nav .sub {background-color: #d5608b; opacity: 0; 
+                            visibility: hidden; transition:  all 0.5s; background-color: #d5608b;
+                            position: absolute; left: 50%; transform: translateX(-50%);}
+
+
+
+header .centerBox nav .sub li a {padding: 15px 20px; text-align: center; font-size: 15px;
+                                color: white; border-bottom: 1px solid white;
+                                letter-spacing: -1px;
+                                white-space: nowrap;}
+
+header .centerBox nav .sub li a:hover {text-decoration: underline;}
+
+/* 주메뉴의 마우스 오버했을 때 서브메뉴 나타남 */
+header .centerBox nav > ul > li:hover .sub {opacity: 1; visibility: visible;}
+
+/* 다국어 지원 영역 */
+header .centerBox .lang {
+    /* 자식객체 .hd-pop를 배치할 때 .lang이 기준이 됨 */
+    position: relative;
+    width: 80px;
+    height: 20px;}
+
+header .centerBox .lang a {display: flex; justify-content: space-between;
+    /* lang영역에서 자식객체들을 세로 가운데 정렬 (그림 글자 높이가 다 다르기 때문에 해당 명령어를 씀) */
+    align-items: center;}
+    header .centerBox .lang a img {
+        /* 원본 크기 유지 */
+        width: initial; }
+
+header .centerBox .lang a p {font-size: 14px;}
+
+header .centerBox .lang .hd-pop {
+        /* .lang영역과 겹침 */
+                                position: absolute;
+                                width: 80px;
+                                top : 30px; left: 0; 
+                                padding: 22px;
+                                 /*부모객체 .lang에 마우스 오버했을 때 서서히 나타남  */
+                                opacity: 0;
+                                visibility: hidden;
+                                transition: all 0,5s;                    
+                                }
+header .centerBox .lang .hd-pop a{
+                                 /* a태그의 형제 객체인 :before와 after와 겹침 */
+                                 position: absolute;
+                                 top: 0px; left: 0px;
+                                 padding: 12px 26px;
+                                 border: 1px solid #ccc;
+                                 background-color: #fff;
+                                 font-size: 14px;          }
+
+header .centerBox .lang .hd-pop:before {
+                                        /* 형제객체 a태그와 : after와 겹침 */
+                                        position: absolute;
+                                        top: -13px;
+                                        left: 50%;
+                                        transform: translateX(-50%);
+                                        content: "";
+                                        border:4px solid transparent;
+                                        border-bottom: 8px solid #999;}
+
+header .centerBox .lang .hd-pop:after{
+                                      /* 형제객체 a태그와 : before와 겹침 */
+                                      position: absolute;
+                                      top: -10px;
+                                      left: 50%;
+                                      transform: translateX(-50%);
+                                      content: "";
+                                      border: 3px solid transparent;
+                                      border-bottom: 8px solid #fff;                                                             
+                                                                         }
+
+/* .lang에 마우스 오버했을 때 말풍선(.hp-pop)나타남 */
+header .centerBox .lang:hover .hd-pop {opacity: 1; visibility: visible;}
+
+
+/* section1 */
+
+section .main a {display: grid;}
+section.s1 .centerBox {height: 90px; align-items: center;}
+section .grayline {background-color: #333; width: 100%; height: 90px; color: #fff;}
+
+section .grayline h3 {font-size: 24px; color: white;}
+section .grayline .subtitle {width: 72%;}
+section .grayline .centerBox div {display: flex; justify-content: space-between; align-items: center;}
+section .grayline .centerBox div div {width: 48%;}
+section .grayline .centerBox .subtitle a {border: 1px solid #272727; border-radius: 30px; padding: 5px 10px; background-color: #777;}
+section .grayline p {font-weight: bold; color: white}
+
+section .grayline .centerBox .subtitle .ccc a:hover {background-color: #d5608b;}
+
+section .grayline .centerBox .subtitle a:hover {background-color: #14843a;}
+
+/* section2 */
+section.s2{
+    /* css 에서는 ../을 붙여줘야 img 폴더를 찾을 수 있다. */
+    background-image:url(../img/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 60px;
+}
+section.s2 h1 {
+    font-size: 44px;
+    color: #333;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+section.s2 p {
+    font-family: 'S-CoreDream-3Light';
+    font-size: 18px;
+    line-height: 32px;
+}
+section.s2 .title a {
+    padding: 12px 24px;
+    border-radius: 26px;
+    border:2px solid #999;
+    width: 200px;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: -2px;
+    background-image: url(../img/화살표.png);
+    background-position: 165px center;
+    background-repeat: no-repeat;
+}
+section.s2 .title a:hover {
+    text-decoration: underline;
+}
+
+section.s2 .content ul {
+    display: grid;
+    gap : 60px;
+    /* 3열 */
+    grid-template-columns: repeat(3, 1fr);
+    /* 2행 */
+    grid-template-rows: repeat(2, 1fr);
+}
+section.s2 .content ul li {
+    width: 305px; height: 305px;
+    border-radius: 100%;
+    position: relative;
+
+}
+section.s2 .content ul li .hover {
+    border-radius: 100%;
+    /* 검정색 반투명 */
+    background-color: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0; top:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* .hover가 안보임 opacity 써도됨 */
+    visibility: hidden;
+}
+section.s2 .content ul li .hover a {
+    padding:12px 24px;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    /* 블록요소를 인라인요소로 변환 */
+    display: inline;
+    font-size: 14px;
+    color: #fff;
+}
+/* .content ul li에 마우스 오버했을 때 .hover 보임 */
+section.s2 .content ul li:hover .hover {
+    visibility: visible;
+}
+
+
+/* section3번째, 4번째, 5번째 CenterBox는 자식객체를 열기준으로 정렬 */
+section.s3 .centerBox,
+section.s4 .centerBox,
+section.s5 .centerBox,
+section.s7 .centerBox{
+        flex-flow: column nowrap; align-items: center;
+}
+
+section.s3 {
+    background-color: #fcf5e3;
+    padding: 70px;
+    width: 100%;
+}
+section.s3 .centerBox {align-items: center; height: 900px;}
+section.s3 .centerBox h1 {font-size: 50px; font-weight: bold; letter-spacing: 5px; margin-bottom: 50px;}
+section.s3 .centerBox ul li span {color: #d5608b; font-size: 12px; line-height: 30px; display: block; margin-top: 10px; }
+section.s3 .chefs ul li {width: 100%px; height: 340px; background-color: white; padding: 20px;
+                        box-shadow: 0 3px 5px #ccc;
+                        /* 화살표 모양의 커서를 손모양으로 표시하기 */
+                        cursor: pointer;
+                    }
+section.s3 .centerBox ul li span i {color: #333; float: right;}
+
+section.s3 .chefs ul li p {font-size: 15px; color: #666;}
+
+section.s3 .chefs ul {
+    display: grid; gap : 30px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin-bottom: 100px;
+}
+
+
+
+
+
+
+
+section.s4 {background-color: white; width: 100%; padding: 100px 0; }
+
+section.s4 .centerBox {width: 100%; height: 750px; align-items: center;}
+
+section.s4 .centerBox .Main {width: 390px; display: flex; justify-content: space-between;}
+
+section.s4 .Main img {width: 50px; height: 40px; margin-top: 15px;}
+
+section.s4 .title ul {width: 570px; display: flex; justify-content: space-between}
+
+section.s4 .title ul li {width: 130px; border: solid 1px #ccc; padding: 5px 30px; text-align: center; border-radius: 100px; font-weight: bold;}
+
+section.s4 .centerBox .subbg ul {display: flex; justify-content: space-between; margin-top: 20px;}
+
+section.s4 .title ul li:first-child { background-color: #cb4574;}
+
+section.s4 .title ul li:first-child > a:first-child { color: #fff}
+
+
+
+
+section.s5 {background-color: #eee; padding: 100px 0;}
+section.s5 .Main {width: 100%; align-items: center; display: flex; justify-content: center; margin-bottom: 30px;}
+
+section.s5 .centerBox {width: 100%px;}
+
+section.s5 .Main img {width: 50px; transform: translateX(-20px);}
+
+section.s5 .Main h1 {font-weight: bold;}
+
+section.s5 .centerBox .banner ul{width: 100%; display: grid; gap: 24px; grid-template-columns: repeat(5,1fr);  grid-template-rows: repeat(1, 1fr);
+                                margin-bottom: 50px;}
+
+section.s5 .centerBox .underline {width: 100%; height: 1px; position: relative;}
+
+section.s5 .centerBox .underline:before {
+    content: "";
+    position: absolute;
+    width: 39%;
+    height: 1px;
+    background-color: #999;
+    left: 0;
+    bottom: 0;
+}
+section.s5 .centerBox .underline:after {
+    content: "";
+    position: absolute;
+    width: 39%;
+    height: 1px;
+    background-color: #999;
+    right: 0;
+    bottom: 0;
+}
+
+section.s6 {padding: 100px 0;}
+section.s6 .centerBox {display: flex; justify-content: space-between;
+                       height: 400px; width: 1400px;}
+
+section.s6 .centerBox .bg1 {width: 47%;}
+section.s6 .centerBox .bg2 {width: 47%;}
+
+section.s6 .centerBox .gongji ul li {display: flex; justify-content: space-between;}
+section.s6 .centerBox ul li h1 {font-size: 24px; padding: 30px 0; font-weight: bold;}
+section.s6 .centerBox button {font-size: 12px; margin: 35px 0; padding: 10px; border-radius: 20px;
+                                border: solid 1px #777; color: #444; background-color: white;
+                                font-weight: bold;}
+section.s6 .centerBox .media ul li {display: flex; justify-content: space-between;}
+
+section.s6 .centerBox .event {border: solid 1px #ccc; border-left: none; border-right: none; padding: 30px;}
+section.s6 .centerBox .event ul li{display: flex; justify-content: space-evenly; flex-flow: row nowrap;
+                                  }
+section.s6 .centerBox .span04 {border: solid 2px #ccc; text-align: center; padding: 7px;}
+section.s6 .centerBox .span04 span {font-size: 10px; font-weight: bold; text-shadow: #111;}
+section.s6 .centerBox .span04 h3 {color:#cb4574; font-weight: bold;}
+section.s6 .centerBox .span2023 p {font-size: 12px; color: #aaa;}
+section.s6 .centerBox .span2023 span {font-size: 10px; color: #aaa}
+section.s6 .centerBox .info ul li{display: flex; justify-content:space-between; padding: 10px; margin-top: 0px;
+                                    color: #777; font-size: 70%;}
+
+section.s6 .centerBox .middle ul  {display: grid; gap:40px;
+                                    grid-template-columns: repeat(2, 1fr); white-space: nowrap;}
+section.s6 .centerBox .middle ul li {border: solid 1px #ccc; height: 250px; }
+section.s6 .centerBox .middle h4 {font-size: 13px; border: 1px solid #ccc; text-align: center; width: 70px; background-color: #cb4574; color: white; padding: 5px; margin: 20px;}
+section.s6 .centerBox .middle p {font-size: 15px; font-weight: bold; font-size: 17px; line-height: -20px; margin-top: 10px; margin: 20px;}
+section.s6 .centerBox .middle span {font-size: 12px; color: #777; line-height: 70px; margin: 20px;}
+section.s6 .centerBox .middle .hover {font-size: 11px; color: #aaa; background-clip: padding-box; background-color: #f0eeee; padding: 14px 40px;}
+section.s6 .centerBox .middle ul li:hover  {border: solid 1px #cb4574;}
+section.s6 .centerBox .middle ul li:hover .hover{background-color: #cb4574; color: white;}
+
+
+
+
+section.s7  {background-image: url(../img/ft-gate-bg.jpg); background-size: cover; height: 400px; padding-top: 110px;}
+section.s7 .centerBox .butten ul {width: 1200px; display: flex; justify-content: space-between; margin-top: 50px;}
+section.s7 .centerBox .butten li {border: white solid 1px; border-radius: 30px; padding: 10px 25px; color: white; width: 270px; text-align: center; font-size: 15px;}
+section.s7 .centerBox .butten li:hover {background-color: #cb4574; border: #cb4574;}
+section.s7 .centerBox .flogo img {width: 500px;}
+
+
+
+footer {background-color: #333; background-size: cover; display: flex; justify-content: space-between; align-items: center;}
+footer .bg2 {display: flex; justify-content: space-between; align-items: center;}
+footer .bg2 .logo {width: 400px; margin: 50px;}
+footer .bg2 .fword {font-size: 27px; color: #ddd; letter-spacing: -1px;}
+footer .bg3 .icon {display: flex; justify-content: space-between; width: 200px; align-items: center;}
+footer .bg3 .icon a {width: 50px;}
+footer .bg3 .word2 {display: flex; justify-content: space-between; width: 300px;}
+footer .bg3 .word2 a {color: white;}
+footer .bg3 .icon:first-child {width: 100%;}
